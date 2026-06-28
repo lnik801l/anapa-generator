@@ -37,7 +37,7 @@ useHead({
       </div>
       <div class="hero-strip">
         <div class="wrap strip-row">
-          <div class="strip-i"><div class="strip-k">29 лет суммарного опыта</div><div class="strip-v">Инженер-электрик и мастер по дизельным двигателям</div></div>
+          <div class="strip-i"><div class="strip-k">15 лет суммарного опыта</div><div class="strip-v">Инженер-электрик и мастер по дизельным двигателям</div></div>
           <div class="strip-i"><div class="strip-k">От 15 до 1 000 кВт</div><div class="strip-v">Обслуживаем установки любой мощности</div></div>
           <div class="strip-i"><div class="strip-k">Не нашли причину — 0 ₽</div><div class="strip-v">Платите только за результат</div></div>
         </div>

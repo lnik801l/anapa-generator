@@ -149,7 +149,10 @@ a{color:inherit}
 .team-grid,.contact-grid{grid-template-columns:1fr}
 .contact-grid{gap:36px}
 .spec{grid-template-columns:1fr}
-.spec-photo{min-height:300px;object-position:50% 20%}
+/* Single-column on mobile: give the photo an explicit height instead of 100%.
+   iOS Safari resolves height:100% on an auto-sized grid row against the whole
+   container, which made the photo cover the card and the text overlap it. */
+.spec-photo{height:360px;min-height:0;object-position:50% 20%}
 .hero{min-height:0}
 .hero-strip{position:static;backdrop-filter:none}
 .hero-wrap{padding-bottom:40px}
