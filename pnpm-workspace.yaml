@@ -1,0 +1,7 @@
+allowBuilds:
+  # esbuild ships a static prebuilt binary and is needed by the Nuxt/Vite build.
+  esbuild: true
+  # @parcel/watcher is a dev-only file watcher; skip its native build (Nuxt falls
+  # back to chokidar). Marking it explicitly avoids the "undecided build" error
+  # and any source-build attempt inside the slim Alpine image.
+  '@parcel/watcher': false

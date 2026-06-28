@@ -1,0 +1,12 @@
+node_modules
+.nuxt
+.output
+.data
+# Raw 4K source videos — only the compressed public/assets/*.mp4 are shipped.
+media-src
+dist
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store

@@ -1,0 +1,13 @@
+services:
+  anapa-generator:
+    build:
+      context: website
+      dockerfile: Dockerfile
+    networks:
+      - traefik_net
+    restart: unless-stopped
+
+networks:
+  traefik_net:
+    external: true
+    name: traefik_net
