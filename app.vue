@@ -5,6 +5,9 @@ const showWorks = config.public.showWorks as boolean
 
 const { telHref, phoneDisplay } = useContacts()
 
+// Prefix /public asset paths with baseURL so they resolve under a project path too.
+const asset = useAssetUrl()
+
 // The original component only overrode the --accent CSS variable; keep that behaviour.
 // Injecting it via useHead avoids a flash of the default colour on SSR hydration.
 useHead({
@@ -21,7 +24,7 @@ useHead({
   <main id="top">
     <!-- HERO -->
     <section class="hero">
-      <img class="hero-img" src="/assets/hero-gensets.png" alt="Дизельные генераторные установки" />
+      <img class="hero-img" :src="asset('/assets/hero-gensets.png')" alt="Дизельные генераторные установки" />
       <div class="hero-veil"></div>
       <div class="hero-veil2"></div>
       <div class="wrap hero-wrap">
@@ -51,7 +54,7 @@ useHead({
         <h2 class="sec-title">Кто будет работать<br />с вашим генератором</h2>
         <div class="team-grid">
           <div class="spec">
-            <img class="spec-photo" src="/assets/spec-kishishyan.jpg" alt="Кишишьян Дмитрий Олегович" />
+            <img class="spec-photo" :src="asset('/assets/spec-kishishyan.jpg')" alt="Кишишьян Дмитрий Олегович" />
             <div class="spec-body">
               <span class="spec-role">Инженер · Электроснабжение</span>
               <h3 class="spec-name">Кишишьян<br />Дмитрий Олегович</h3>
@@ -61,7 +64,7 @@ useHead({
             </div>
           </div>
           <div class="spec">
-            <img class="spec-photo" src="/assets/spec-yankin.jpg" alt="Янкин Юрий Юрьевич" />
+            <img class="spec-photo" :src="asset('/assets/spec-yankin.jpg')" alt="Янкин Юрий Юрьевич" />
             <div class="spec-body">
               <span class="spec-role">Мастер · Дизельные двигатели</span>
               <h3 class="spec-name">Янкин<br />Юрий Юрьевич</h3>
@@ -94,8 +97,8 @@ useHead({
         <p class="eyebrow"><span class="eb-line"></span>Наши работы</p>
         <h2 class="sec-title">Смотрите, как мы работаем</h2>
         <div class="works-grid">
-          <WorkVideo src="/assets/video-1.mp4" poster="/assets/video-1.jpg" />
-          <WorkVideo src="/assets/video-2.mp4" poster="/assets/video-2.jpg" />
+          <WorkVideo :src="asset('/assets/video-1.mp4')" :poster="asset('/assets/video-1.jpg')" />
+          <WorkVideo :src="asset('/assets/video-2.mp4')" :poster="asset('/assets/video-2.jpg')" />
         </div>
       </div>
     </section>

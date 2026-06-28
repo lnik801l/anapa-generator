@@ -1,0 +1,76 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Режим деплоя — меняешь ЭТИ ДВЕ строки и пушишь, код трогать не нужно:
+#
+#   Project-сайт  (https://lnik801l.github.io/anapa-generator):
+#       BASE_URL:      "/anapa-generator/"
+#       CUSTOM_DOMAIN: ""
+#
+#   Кастомный домен (например anapa-generator.ru, сайт в корне):
+#       BASE_URL:      "/"
+#       CUSTOM_DOMAIN: "anapa-generator.ru"
+#
+# Можно вынести в переменные репозитория (Settings → Secrets and variables →
+# Actions → Variables) — тогда вместо правок здесь ставишь vars.BASE_URL /
+# vars.CUSTOM_DOMAIN. Сейчас оставлено явно для наглядности.
+# ─────────────────────────────────────────────────────────────────────────────
+env:
+  BASE_URL: "/anapa-generator/"
+  CUSTOM_DOMAIN: ""
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Не отменять уже идущий деплой — GitHub Pages этого не любит.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4 # версию pnpm берёт из package.json → packageManager
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22 # pnpm 11 требует Node >= 22.13
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Build static site
+        env:
+          NITRO_PRESET: github-pages # добавляет .nojekyll + 404.html
+          NUXT_APP_BASE_URL: ${{ env.BASE_URL }} # префикс путей к ассетам
+        run: pnpm generate
+
+      - name: Write CNAME (только для кастомного домена)
+        if: env.CUSTOM_DOMAIN != ''
+        run: echo "${{ env.CUSTOM_DOMAIN }}" > .output/public/CNAME
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .output/public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

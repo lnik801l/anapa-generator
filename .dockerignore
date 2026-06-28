@@ -9,7 +9,6 @@ npm-debug.log*
 .DS_Store
 .env
 .env.*
-claude
 media-src
 README.md
 Dockerfile
