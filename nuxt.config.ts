@@ -12,8 +12,12 @@ export default defineNuxtConfig({
       // Configurable from the container without rebuilding the image:
       //   NUXT_PUBLIC_ACCENT=#c0392b
       //   NUXT_PUBLIC_SHOW_WORKS=false
+      //   NUXT_PUBLIC_PHONE=+79990001122
+      //   NUXT_PUBLIC_PHONE_DISPLAY="+7 (999) 000-11-22"
       accent: '#e0922a',
       showWorks: true,
+      phone: '+79892492059', // used in tel: links
+      phoneDisplay: '+7 (989) 249-20-59', // human-readable form
     },
   },
 

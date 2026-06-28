@@ -4,7 +4,7 @@
 const scrolled = ref(false)
 const navOpen = ref(false)
 
-const PHONE = '+79892492059'
+const { telHref, phoneDisplay } = useContacts()
 
 function onScroll() {
   scrolled.value = window.scrollY > 24
@@ -47,7 +47,7 @@ onBeforeUnmount(() => {
           <a class="nav-a" href="#price" @click="closeNav">Стоимость</a>
           <a class="nav-a" href="#contacts" @click="closeNav">Контакты</a>
         </div>
-        <a class="head-cta" :href="`tel:${PHONE}`"><span>+7 (989) 249-20-59</span>Позвонить</a>
+        <a class="head-cta" :href="telHref"><span>{{ phoneDisplay }}</span>Позвонить</a>
         <button class="burger" aria-label="Меню" @click="toggleNav">
           <span></span><span></span><span></span>
         </button>

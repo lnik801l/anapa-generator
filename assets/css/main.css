@@ -87,6 +87,7 @@ a{color:inherit}
 .video-ov:hover .video-play{transform:scale(1.06)}
 .video-play b{display:block;width:0;height:0;border-style:solid;border-width:13px 0 13px 22px;border-color:transparent transparent transparent #1a1610;margin-left:5px}
 .to-intro{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap}
+.to-intro .sec-sub{margin:0}
 .to-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:54px;align-items:start}
 .to{background:var(--panel);border:1px solid rgba(255,255,255,.09);border-radius:8px;padding:32px 28px}
 .to-head{display:flex;align-items:center;justify-content:space-between;padding-bottom:20px;margin-bottom:22px;border-bottom:1px solid rgba(255,255,255,.1)}

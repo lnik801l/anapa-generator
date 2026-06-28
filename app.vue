@@ -3,7 +3,7 @@ const config = useRuntimeConfig()
 const accent = config.public.accent as string
 const showWorks = config.public.showWorks as boolean
 
-const PHONE = '+79892492059'
+const { telHref, phoneDisplay } = useContacts()
 
 // The original component only overrode the --accent CSS variable; keep that behaviour.
 // Injecting it via useHead avoids a flash of the default colour on SSR hydration.
@@ -30,7 +30,7 @@ useHead({
           <h1 class="hero-h1">Монтаж, обслуживание и <span class="am">ремонт</span> дизельных генераторов</h1>
           <p class="hero-p">Дизельные генераторные установки мощностью свыше 15 кВт. Выезд, точная диагностика и устранение неисправностей — с гарантией результата.</p>
           <div class="hero-cta">
-            <a class="btn btn-amber" :href="`tel:${PHONE}`">Вызвать специалиста</a>
+            <a class="btn btn-amber" :href="telHref">Вызвать специалиста</a>
             <a class="btn btn-ghost" href="#to">Регламент ТО</a>
           </div>
         </div>
@@ -108,7 +108,7 @@ useHead({
             <p class="eyebrow"><span class="eb-line"></span>Регламент технического обслуживания</p>
             <h2 class="sec-title">Три уровня ТО<br />дизельной установки</h2>
           </div>
-          <p class="sec-sub" style="margin:0">Все работы выполняются с использованием расходных материалов Исполнителя. Объём согласовывается индивидуально под каждый генератор.</p>
+          <p class="sec-sub">Все работы выполняются с использованием расходных материалов Исполнителя. Объём согласовывается индивидуально под каждый генератор.</p>
         </div>
         <div class="to-grid">
           <div class="to">
@@ -167,7 +167,7 @@ useHead({
             <div class="guar-num">0₽</div>
             <div><h3 class="guar-t">Не устранили — не берём денег</h3><p class="guar-p">Если мы не устраним неисправность и не сможем установить точную причину поломки — стоимость нашей работы составит 0 рублей.</p></div>
           </div>
-          <a class="btn btn-dark" :href="`tel:${PHONE}`">Вызвать специалиста</a>
+          <a class="btn btn-dark" :href="telHref">Вызвать специалиста</a>
         </div>
       </div>
     </section>
@@ -179,7 +179,7 @@ useHead({
           <div>
             <p class="eyebrow"><span class="eb-line"></span>Контакты</p>
             <div class="c-name">Дмитрий</div>
-            <a class="c-phone" :href="`tel:${PHONE}`">+7 (989) 249-20-59</a>
+            <a class="c-phone" :href="telHref">{{ phoneDisplay }}</a>
             <div class="c-list">
               <div class="c-item"><div class="c-ic dot"><i></i></div><div><div class="c-k">Режим работы</div><div class="c-v">Пн–Вс, 08:00 – 22:00</div></div></div>
               <div class="c-item"><div class="c-ic"><i></i></div><div><div class="c-k">Зона выезда</div><div class="c-v">Анапа и Анапский район</div></div></div>
@@ -188,7 +188,7 @@ useHead({
           <div class="c-card">
             <h3>Нужен генератор «на ходу»?</h3>
             <p>Позвоните — выезд на место установки, осмотр и расчёт стоимости бесплатны. Точную диагностику и устранение неисправности выполним в день обращения.</p>
-            <a class="btn btn-amber" :href="`tel:${PHONE}`" style="width:100%">Позвонить сейчас</a>
+            <a class="btn btn-amber" :href="telHref" style="width:100%">Позвонить сейчас</a>
           </div>
         </div>
       </div>
