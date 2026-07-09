@@ -40,7 +40,7 @@ useHead({
       </div>
       <div class="hero-strip">
         <div class="wrap strip-row">
-          <div class="strip-i"><div class="strip-k">15 лет суммарного опыта</div><div class="strip-v">Инженер-электрик и мастер по дизельным двигателям</div></div>
+          <div class="strip-i"><div class="strip-k">15 лет опыта работы</div><div class="strip-v">Инженер-электрик и мастер по дизельным двигателям</div></div>
           <div class="strip-i"><div class="strip-k">От 15 до 1 000 кВт</div><div class="strip-v">Обслуживаем установки любой мощности</div></div>
           <div class="strip-i"><div class="strip-k">Не нашли причину — 0 ₽</div><div class="strip-v">Платите только за результат</div></div>
         </div>
@@ -84,9 +84,9 @@ useHead({
         <h2 class="sec-title">Полный цикл работ по ДГУ</h2>
         <p class="sec-sub">От установки «под ключ» до планового обслуживания и аварийного ремонта дизельных генераторных установок свыше 15 кВт.</p>
         <div class="svc-grid">
-          <div class="svc"><div class="svc-n">01</div><h3 class="svc-t">Монтаж</h3><p class="svc-d">Установка ДГУ «под ключ»: строительные и монтажные работы, подключение к потребителю электроэнергии. Выезд на место и расчёт — бесплатно.</p></div>
-          <div class="svc"><div class="svc-n">02</div><h3 class="svc-t">Обслуживание</h3><p class="svc-d">Плановое ТО по регламенту ТО-1, ТО-2 и ТО-3 с расходными материалами Исполнителя. Объём работ согласовывается под каждый генератор.</p></div>
-          <div class="svc"><div class="svc-n">03</div><h3 class="svc-t">Ремонт</h3><p class="svc-d">Выезд на неработающую ДГУ, точная диагностика и устранение неисправности. Если причину не нашли — работа бесплатно.</p></div>
+          <div class="svc"><h3 class="svc-t">Монтаж</h3><p class="svc-d">Установка ДГУ «под ключ»: строительные и монтажные работы, подключение к потребителю электроэнергии. Выезд на место и расчёт — бесплатно.</p></div>
+          <div class="svc"><h3 class="svc-t">Обслуживание</h3><p class="svc-d">Плановое ТО по регламенту ТО-1, ТО-2 и ТО-3 с расходными материалами Исполнителя. Объём работ согласовывается под каждый генератор.</p></div>
+          <div class="svc"><h3 class="svc-t">Ремонт</h3><p class="svc-d">Выезд на неработающую ДГУ, точная диагностика и устранение неисправности. Если причину не нашли — работа бесплатно.</p></div>
         </div>
       </div>
     </section>
@@ -202,6 +202,11 @@ useHead({
     <div class="wrap foot-row">
       <div class="foot-b"><span class="brand-mark" style="width:36px;height:36px;font-size:15px">АГ</span><span class="foot-name">Анапа-Генератор</span></div>
       <div class="foot-meta">Монтаж · Обслуживание · Ремонт дизельных генераторных установок · Анапа</div>
+      <div class="foot-meta foot-contacts">
+        ИП Кишишьян Дмитрий Олегович<br />
+        ИНН 230111271272<br />
+        Эл. почта: <a class="foot-mail" href="mailto:anapa-generator@ya.ru">anapa-generator@ya.ru</a>
+      </div>
       <div class="foot-meta">© 2026 Анапа-Генератор</div>
     </div>
   </footer>
