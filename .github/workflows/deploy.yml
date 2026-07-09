@@ -21,8 +21,10 @@ on:
 # vars.CUSTOM_DOMAIN. Сейчас оставлено явно для наглядности.
 # ─────────────────────────────────────────────────────────────────────────────
 env:
-  BASE_URL: "/anapa-generator/"
-  CUSTOM_DOMAIN: ""
+  # BASE_URL: "/anapa-generator/"
+  # CUSTOM_DOMAIN: ""
+  BASE_URL: "/"
+  CUSTOM_DOMAIN: "anapa-generator.ru"
 
 permissions:
   contents: read
